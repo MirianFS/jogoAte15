@@ -60,10 +60,10 @@ public class TelaInicial extends javax.swing.JFrame {
         LabelNomeDoJogador1 = new javax.swing.JLabel();
         botaoSair = new javax.swing.JToggleButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        MenuOpcoes = new javax.swing.JMenu();
+        itemMenuConectar = new javax.swing.JMenuItem();
+        itemMenuIniciarPartida = new javax.swing.JMenuItem();
+        itemMenuDesconectar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -192,33 +192,33 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
 
-        jMenu2.setText("Opções");
+        MenuOpcoes.setText("Opções");
 
-        jMenuItem1.setText("Conectar");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        itemMenuConectar.setText("Conectar");
+        itemMenuConectar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                itemMenuConectarActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem1);
+        MenuOpcoes.add(itemMenuConectar);
 
-        jMenuItem3.setText("Iniciar Partida");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        itemMenuIniciarPartida.setText("Iniciar Partida");
+        itemMenuIniciarPartida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                itemMenuIniciarPartidaActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem3);
+        MenuOpcoes.add(itemMenuIniciarPartida);
 
-        jMenuItem2.setText("Desconectar");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        itemMenuDesconectar.setText("Desconectar");
+        itemMenuDesconectar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                itemMenuDesconectarActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem2);
+        MenuOpcoes.add(itemMenuDesconectar);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(MenuOpcoes);
 
         setJMenuBar(jMenuBar1);
 
@@ -290,7 +290,7 @@ public class TelaInicial extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void itemMenuIniciarPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemMenuIniciarPartidaActionPerformed
         // opcao Iniciar Partida
         try {
             ator.IniciarPartida();
@@ -298,9 +298,9 @@ public class TelaInicial extends javax.swing.JFrame {
             notificar(e1.getMessage());
             e1.printStackTrace();
         }
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_itemMenuIniciarPartidaActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void itemMenuConectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemMenuConectarActionPerformed
         // opcao Conectar
         try {
             String nomeJogador = solicitar("Insira seu nome:", null);
@@ -311,9 +311,9 @@ public class TelaInicial extends javax.swing.JFrame {
             notificar(ex.getMessage());
             ex.printStackTrace();
         }
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_itemMenuConectarActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void itemMenuDesconectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemMenuDesconectarActionPerformed
         // opcao Desconectar
         try {
             ator.desconectar();
@@ -322,7 +322,7 @@ public class TelaInicial extends javax.swing.JFrame {
             notificar(ex.getMessage());
             ex.printStackTrace();
         }
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_itemMenuDesconectarActionPerformed
     
     public void clickPosicao(int numeroEscolhido) {
         try {
@@ -429,6 +429,7 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JLabel LabelJogador2;
     private javax.swing.JLabel LabelNomeDoJogador1;
     private javax.swing.JLabel LabelNomeDoJogador2;
+    private javax.swing.JMenu MenuOpcoes;
     private javax.swing.JLabel ate15;
     private javax.swing.JToggleButton botao1;
     private javax.swing.JToggleButton botao2;
@@ -441,11 +442,10 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JToggleButton botao9;
     private javax.swing.JButton botaoInstrucoes;
     private javax.swing.JToggleButton botaoSair;
-    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuItem itemMenuConectar;
+    private javax.swing.JMenuItem itemMenuDesconectar;
+    private javax.swing.JMenuItem itemMenuIniciarPartida;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
